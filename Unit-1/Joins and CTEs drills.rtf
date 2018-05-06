@@ -94,15 +94,26 @@ AS (\
 	FROM\
 		weather\
 	WHERE\
-		Events like \'91Rain\'92\
+		events = 'Rain'\
+	GROUP BY date\
+),\
+\
+rain_trip\
+AS (\
+	SELECT\
+		rain.date,\
+		trips.duration\
+	FROM\
+		trips\
+	JOIN\
+		rain\
+	ON\
+		rain.date = DATE(trips.start_date)\
+	ORDER BY duration DESC\
 )\
 SELECT\
-	rain.date\
-	MAX (trips.duration) longest_trip\
+	date,\
+	MAX (duration)\
 FROM\
-	rain\
-JOIN\
-	trips\
-ON\
-	rain.date = DATE(trips.start_date)\
+	rain_trip\
 GROUP BY date}
