@@ -40,6 +40,20 @@ Trip 1270571 from 2016-07-09 (86110)\
 QUESTION:\
 Which station is full most often?\
 \
+SELECT\
+	station_id,\
+	COUNT(station_id) counts\
+FROM\
+	status\
+WHERE\
+	docks_available = 0\
+GROUP BY station_id\
+ORDER BY counts DESC\
+LIMIT 1\
+\
+ANSWER:\
+Station 70\
+\
 \
 QUESTION:\
 Return a list of stations with a count of number of trips starting at that station but ordered by dock count.\
@@ -70,4 +84,25 @@ ORDER BY dockcount\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
 QUESTION:\
-(Challenge) What's the length of the longest trip for each day it rains anywhere?}
+(Challenge) What's the length of the longest trip for each day it rains anywhere?\
+\
+WITH\
+	rain\
+AS (\
+	SELECT\
+		date\
+	FROM\
+		weather\
+	WHERE\
+		Events like \'91Rain\'92\
+)\
+SELECT\
+	rain.date\
+	MAX (trips.duration) longest_trip\
+FROM\
+	rain\
+JOIN\
+	trips\
+ON\
+	rain.date = DATE(trips.start_date)\
+GROUP BY date}
