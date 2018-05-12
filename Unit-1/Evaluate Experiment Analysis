@@ -1,0 +1,31 @@
+Read the following descriptions of an experiment and its analysis, identify the flaws in each, and describe what you would do to correct them.
+
+The Sith Lords are concerned that their recruiting slogan, "Give In to Your Anger," isn't very effective. Darth Vader develops an alternative slogan, "Together We Can Rule the Galaxy." They compare the slogans on two groups of 50 captured droids each. In one group, Emperor Palpatine delivers the "Anger" slogan. In the other, Darth Vader presents the "Together" slogan. 20 droids convert to the Dark Side after hearing Palpatine's slogan, while only 5 droids convert after hearing Vader's. The Sith's data scientist concludes that "Anger" is a more effective slogan and should continue to be used.
+
+More information is needed about each sample of droids to determine if each is a representative sample.  The fact that this experiment is with captured droids means that it is unlikely to reflect potential success with other groups (non-captured droids, captured non-droids, etc).
+This experiment does not account for differences in perception between Emperor Palpatine and Darth Vader.  The success of each slogan used may have more to do with who used it that the slogan itself - each Sith may have had similar success with the other slogan.  Establishing a baseline of success for each Sith Lord using the original slogan would help to filter out the bias of success between the two Sith.  Then, testing each man using the new slogan would allow for comparison of success by each Sith Lord with each slogan.  It is possible that the slogans might not impact success as much as the individual using them. It is also possible that each Sith may be more successful with different slogans.
+
+
+In the past, the Jedi have had difficulty with public relations. They send two envoys, Jar Jar Binks and Mace Windu, to four friendly and four unfriendly planets respectively, with the goal of promoting favorable feelings toward the Jedi. Upon their return, the envoys learn that Jar Jar was much more effective than Windu: Over 75% of the people surveyed said their attitudes had become more favorable after speaking with Jar Jar, while only 65% said their attitudes had become more favorable after speaking with Windu. This makes Windu angry, because he is sure that he had a better success rate than Jar Jar on every planet. The Jedi choose Jar Jar to be their representative in the future.
+
+This is a potential example of Simpson's Paradox.  Mace Windu may have been more successful on more planets, but his averaged success might appear less than Jar Jar.
+It would better to look at success rates on each planet, as well as details about each planet.  A better solution might be to assign a representative based on known information about each planet and their success rates with similar planets.
+
+
+A company with work sites in five different countries has sent you data on employee satisfaction rates for workers in Human Resources and workers in Information Technology. Most HR workers are concentrated in three of the countries, while IT workers are equally distributed across worksites. The company requests a report on satisfaction for each job type. You calculate average job satisfaction for HR and for IT and present the report.
+
+A happiness bias might exist in some of the countries that impacts how the workers rate their happiness.  There may also be a bias within each job type, perhaps based on demographic information (age, gender, etc).
+The report should add a baseline happiness variable for each country.  There should also be a presenation of data by demographic information (age, gender) for each department and each country.  This would potentially identify any problems within a specific department in a specific country that might impact averages.
+
+
+When people install the Happy Days Fitness Tracker app, they are asked to "opt in" to a data collection scheme where their level of physical activity data is automatically sent to the company for product research purposes. During your interview with the company, they tell you that the app is very effective because after installing the app, the data show that people's activity levels rise steadily.
+
+The users who opt-in are potentially more likely to be users who are invested in incresing their activity levels, more committed to using the app to help change their behaviors.  There might also be a bias based on time of year - many people make resolutions to excercise more at the beginning of the year, so data collected in January might mirror an activity surge that is shared by the general population (and unrelated to the app).  Knowing the time frame of the data could help account for that bias.
+This experiment doesn't have an A group, only a B group.  Data on the general population, or a control group, would be needed to account for trends in activity unrelated to use of the app.
+
+
+To prevent cheating, a teacher writes three versions of a test. She stacks the three versions together, first all copies of Version A, then all copies of Version B, then all copies of Version C. As students arrive for the exam, each student takes a test. When grading the test, the teacher finds that students who took Version B scored higher than students who took either Version A or Version C. She concludes from this that Version B is easier, and discards it.
+
+The tests were not distributed randomly - students who enter together are likely to be given the same version of the test. If they studied together, they are more likely to have learned/retained the same information.  If they do cheat, they are more likely to be sitting next to someone with the same test, so the cheating is more productive.
+The better procedure would be to have all students sit, then pass out the tests A-B-C-A-B-C (etc) to ensure that students sitting next to each other do not have the same test. 
+
