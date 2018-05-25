@@ -1,0 +1,22 @@
+For each of the following situations, decide if you would model using a regression or classification model. Discuss your reasoning with your mentor next time you meet.
+
+The amount a person will spend on a given site in the next 24 months.
+Regression - The outcome variable is continuous, so regression is appropriate.
+
+What color car someone is going to buy.
+Classification - The outcome variable is categorical.
+
+How many children a family will have.
+Both methods would work as the outcome variable is numeric, but there are limits to the likely values.  I would choose Regression, to allow for an average value.
+
+If someone will sign up for a service.
+Classification - The categorical outcome variable is simply handled
+
+The number of times someone will get sick in a year.
+Regression - Although both classification might be an option, the average value is the desired result.
+
+The probability someone will get sick in the next month.
+Classification - two options (sick or not sick) for the result variable make it categorical.
+
+Which medicine will work best for a given patient.
+Classification - categorial outcome variable
